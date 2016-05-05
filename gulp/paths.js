@@ -17,4 +17,14 @@ module.exports = function(wagner) {
                     "./node_modules/bootstrap/dist/**/*.css"
                   ]);
   wagner.constant("CSS_VEND_DEST", "vendors.min.css");
+
+  // Test Paths
+  wagner.constant("TESTS_PATH", "./test/*.js");
+  wagner.constant("TESTS_SRC_JS", [
+    "./**/*.js",
+    "!./node_modules/**/*.js",
+    "!./gulpfile.js",
+    "!./gulp/**/*.js",
+    "!./test/**/*.js"
+  ]);
 };
