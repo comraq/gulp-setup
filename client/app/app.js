@@ -2,30 +2,35 @@
  * Note: IIFE not required due to browserify auto scoping to
  *        preventing global pollution
  */
-((window, document) => {
-  // Include external global scripts from vendors (such as jQuery/angular)
-  require("../vendors/scripts");
 
-  // Include non-global scripts/libraries
-  var React = require("react"),
-      ReactDOM = require("react-dom");
+// Include external global scripts from vendors (such as jQuery/angular)
+require("../vendors/scripts");
 
-  // Rest of the app's scripts goes here
-  let myVar = "Testing ES6 Features";
-  let myFunc = () => console.log(myVar);
-  myFunc();
+// Include non-global scripts/libraries
+import React from "react";
+import ReactDOM from "react-dom";
 
-  let MyComp = React.createClass({
-    render: () => {
-      let htmlStr = { __html: require("./htmlString") };
-      return <div dangerouslySetInnerHTML={htmlStr}></div>;
-    }
-  });
+import customHTML from "./htmlString";
 
-  (() => {
-    ReactDOM.render(
-      <MyComp />,
-      document.getElementById("my-div")
-    );
-  })();
-})(window, document);
+// Rest of the app's scripts goes here
+const myVar = "Testing ES6 Features";
+const myFunc = () => console.log(myVar);
+myFunc();
+
+class MyComp extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    let htmlStr = { __html: customHTML };
+    return <div dangerouslySetInnerHTML={htmlStr}></div>;
+  }
+}
+
+(() => {
+  ReactDOM.render(
+    <MyComp />,
+    document.getElementById("my-div")
+  );
+})();
