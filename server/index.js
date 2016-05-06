@@ -1,8 +1,10 @@
-var express = require("express"),
-    morgan = require("morgan");
+#!/usr/bin/env node
 
-var app = express(),
-    port = process.argv[2] || process.env.PORT || 80;
+import express from "express";
+import morgan from "morgan";
+
+const app = express();
+let port = process.argv[2] || process.env.PORT || 80;
 
 app.use(morgan("dev"));
 
