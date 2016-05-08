@@ -15,7 +15,9 @@ var port = process.argv[2] || process.env.PORT || 80;
 
 app.use((0, _morgan2.default)("dev"));
 
+app.use("/", _express2.default.static(__dirname + "/../client"));
 app.get("*", function (req, res) {
+  res.write("something\n");
   res.end("Thanks from ES2015 js syntax!");
 });
 

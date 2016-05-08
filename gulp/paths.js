@@ -6,6 +6,7 @@ module.exports = function(wagner) {
                     "./client/app/**/*.js"
                   ]);
   wagner.constant("JS_DEST", "scripts.min.js");
+  wagner.constant("BASE_PATH", "./client");
   
   // Client CSS Paths
   wagner.constant("CSS_SRC_GLOB", [

@@ -9,7 +9,10 @@ class Mycomp extends React.Component {
 
   render() {
     let htmlStr = { __html: customHTML };
-    return <div dangerouslySetInnerHTML={htmlStr}></div>;
+    return <div>
+      <div dangerouslySetInnerHTML={htmlStr}></div>
+      <input type="text" value="" placeholder="hi there" />
+    </div>;
   }
 }
 
