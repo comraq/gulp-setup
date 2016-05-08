@@ -10,27 +10,12 @@ require("../vendors/scripts");
 import React from "react";
 import ReactDOM from "react-dom";
 
-import customHTML from "./htmlString";
+import Mycomp from "./components/Mycomp";
 
 // Rest of the app's scripts goes here
 const myVar = "Testing ES6 Features";
 const myFunc = () => console.log(myVar);
 myFunc();
 
-class MyComp extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    let htmlStr = { __html: customHTML };
-    return <div dangerouslySetInnerHTML={htmlStr}></div>;
-  }
-}
-
-(() => {
-  ReactDOM.render(
-    <MyComp />,
-    document.getElementById("my-div")
-  );
-})();
+const app = document.getElementById("app");
+ReactDOM.render(<Mycomp />, app);
