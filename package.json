@@ -26,7 +26,7 @@
     "babel-preset-es2015": "*",
     "babel-preset-react": "*",
     "babelify": "*",
-    "browser-sync": "^2.12.5",
+    "browser-sync": "*",
     "browserify": "*",
     "chai": "*",
     "gulp": "*",
