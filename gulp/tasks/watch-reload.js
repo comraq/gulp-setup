@@ -1,12 +1,11 @@
 var browserSync = require("browser-sync");
 
-module.exports = function(gulp, plugins, BIN_PATH, BASE_PATH) {
+module.exports = function(gulp, BIN_PATH, BASE_PATH, host, port) {
   return function() {
     var options = {};
-    if (plugins.util.env.host && plugins.util.env.port) {
-      options.proxy = plugins.util.env.host + ":"
-                            + plugins.util.env.port;
-    } else {
+    if (host && port)
+      options.proxy = host + ":" + port;
+    else {
       options.server = {
         baseDir: BASE_PATH
       };

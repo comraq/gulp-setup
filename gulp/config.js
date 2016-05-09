@@ -58,8 +58,17 @@ module.exports = function(wagner) {
   });
 
   // Flags
-  wagner.constant("production",
-                  require("gulp-util").env.production || false);
+  wagner.factory("production", function(plugins) {
+    return plugins.util.env.production || false;
+  });
+
+  wagner.factory("host", function(plugins) {
+    return plugins.util.env.host || false;
+  });
+
+  wagner.factory("port", function(plugins) {
+    return plugins.util.env.port || false;
+  });
 
   // Get task utility functions
   var gulpTasksDir = "./tasks/";
