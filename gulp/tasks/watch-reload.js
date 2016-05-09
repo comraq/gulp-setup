@@ -1,6 +1,9 @@
 var browserSync = require("browser-sync");
 
-module.exports = function(gulp, BIN_PATH, BASE_PATH, host, port) {
+module.exports = function(gulp, plugins, BIN_PATH, BASE_PATH) {
+  var host = plugins.util.env.host || false,
+      port = plugins.util.env.port || false;
+
   return function() {
     var options = {};
     if (host && port)

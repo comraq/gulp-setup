@@ -30,13 +30,15 @@ module.exports = function(wagner) {
 
   // Client js build function, also === "minify-js" gulp task
   // Needed as a dependency due to watchify
-  wagner.factory("minifyJs", function(gulp, plugins, production,
+  wagner.factory("minifyJs", function(gulp, plugins,
                                       JS_DEST, BIN_PATH, transformedInst) {
     var buffer = require("vinyl-buffer"),
         source = require("vinyl-source-stream");
 
     return function(browserifyInst) {
-      var instance = browserifyInst || transformedInst;
+      var instance = browserifyInst || transformedInst,
+          production = plugins.util.env.production || false;
+
       return instance
         .bundle()
         .on("error", function(err) {
@@ -57,17 +59,16 @@ module.exports = function(wagner) {
     };
   });
 
-  // Flags
-  wagner.factory("production", function(plugins) {
-    return plugins.util.env.production || false;
-  });
+  // Log the status of production flag
+  wagner.invoke(function(plugins) {
+    var production = plugins.util.env.production || false;
 
-  wagner.factory("host", function(plugins) {
-    return plugins.util.env.host || false;
-  });
-
-  wagner.factory("port", function(plugins) {
-    return plugins.util.env.port || false;
+    var colour = (production)?
+                   plugins.util.colors.bgGreen
+                 :
+                   plugins.util.colors.bgYellow;
+  
+    plugins.util.log("Production", colour(production));
   });
 
   // Get task utility functions
