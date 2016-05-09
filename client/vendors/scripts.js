@@ -1,6 +1,8 @@
-// External libraries
-var $ = require("jquery");
+/* Libraries and Frameworks from External Vendors*/
+import React from "react";
+import ReactDOM from "react-dom";
 
 // jQuery and Bootstrap
-global.jQuery = global.$ = $;
-require("bootstrap");
+import $ from "jquery";
+jQuery = $;
+import bootstrap from "bootstrap";

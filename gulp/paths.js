@@ -8,6 +8,9 @@ module.exports = function(wagner) {
   wagner.constant("JS_DEST", "scripts.min.js");
   wagner.constant("BASE_PATH", "./client");
   
+  wagner.constant("JS_VEND_SRC", "./client/vendors/scripts.js");
+  wagner.constant("JS_VEND_DEST", "vendors.min.js");
+
   // Client CSS Paths
   wagner.constant("CSS_SRC_GLOB", [
                     "./client/css/*.css",

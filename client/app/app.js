@@ -4,9 +4,6 @@
  */
 
 // Include external global scripts from vendors (such as jQuery/angular)
-require("../vendors/scripts");
-
-// Include non-global scripts/libraries
 import React from "react";
 import ReactDOM from "react-dom";
 
