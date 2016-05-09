@@ -4,4 +4,4 @@ module.exports = function(minifyJs) {
     // However, we want to manipulate this by manually calling minifyJs()
     return minifyJs();
   };
-}
+};

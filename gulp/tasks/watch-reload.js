@@ -17,6 +17,6 @@ module.exports = function(gulp, plugins, BIN_PATH, BASE_PATH) {
     var instance = browserSync.create();
     instance.init(options);
 
-    gulp.watch(BIN_PATH + "/**/*").on("change", instance.reload);
+    return gulp.watch(BIN_PATH + "/**/*").on("change", instance.reload);
   };
-}
+};
