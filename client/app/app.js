@@ -2,8 +2,6 @@
  * Note: IIFE not required due to browserify auto scoping to
  *        preventing global pollution
  */
-
-// Include external global scripts from vendors (such as jQuery/angular)
 import React from "react";
 import ReactDOM from "react-dom";
 
