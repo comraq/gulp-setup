@@ -25,8 +25,8 @@ class ButtonPanel extends React.Component {
 
   render() {
     let buttonsList = this.props.values.split(" ").map((e, i) =>
-      <Mybutton value={ e } key={ i % buttonClasses.length }
-        class={ buttonClasses[i] } callback={ this.buttonClicked(i) }/>
+      <Mybutton value={ e } key={ i } callback={ this.buttonClicked(i) }
+        class={ buttonClasses[i % buttonClasses.length] } />
     );
 
     return <div>{ buttonsList }</div>;
