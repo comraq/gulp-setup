@@ -24,6 +24,9 @@ module.exports = function(wagner) {
                   ]);
   wagner.constant("CSS_VEND_DEST", "vendors.min.css");
 
+  // Client HTML Paths
+  wagner.constant("HTML_SRC_GLOB", "./client/**/*.html");
+
   // Server JS Paths
   wagner.constant("SERV_BASE_PATH", "./server-transpiled");
   wagner.constant("SERV_JS_SRC_GLOB", [

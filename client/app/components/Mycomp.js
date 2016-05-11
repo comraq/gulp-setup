@@ -1,14 +1,14 @@
 import React from "react";
 
-import customHTML from "../htmlString";
+import Myheader from "./Myheader";
+import ButtonPanel from "./ButtonPanel";
 
 class Mycomp extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { text: "" };
+    this.state = { text: this.props.data };
 
-    this.handler = this.handler.bind(this);
     this.inputChanged = this.inputChanged.bind(this);
   }
 
@@ -18,21 +18,13 @@ class Mycomp extends React.Component {
     })
   }
 
-  handler() {
-    console.log("Confirming jQuery is imported/bundled properly, $:");
-    console.log(jQuery);
-  }
-
   render() {
-    let htmlStr = { __html: customHTML };
     return <div>
-      <div dangerouslySetInnerHTML={htmlStr}></div>
+      <Myheader values={ this.state.text } />
       <p>Your Input: { this.state.text }</p>
       <input type="text" value={ this.state.text }
         placeholder="a placeholder" onChange={ this.inputChanged } />
-      <a href="javascript:void(0)" className="btn btn-primary"
-        onClick={ this.handler }>
-        Log jQuery</a>
+      <ButtonPanel values={ this.state.text } />
     </div>;
   }
 }

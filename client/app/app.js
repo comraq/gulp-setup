@@ -12,5 +12,7 @@ const myVar = "Testing ES6 Features";
 const myFunc = () => console.log(myVar);
 myFunc();
 
+const myStr = "a sample string";
 const app = document.getElementById("app");
-ReactDOM.render(<Mycomp />, app);
+
+ReactDOM.render(<Mycomp data={ myStr } />, app);
