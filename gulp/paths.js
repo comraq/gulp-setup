@@ -1,4 +1,4 @@
-export default (wagner) => {
+export default wagner => {
   // Client JS Paths
   wagner.constant("BIN_PATH", "./client/bin");
   wagner.constant("JS_SRC", "./client/app/app.js");
@@ -38,6 +38,7 @@ export default (wagner) => {
   wagner.constant("TESTS_PATH", "./test/*.js");
   wagner.constant("TESTS_SRC_JS", [
     "./**/*.js",
+    "!./server-transpiled/**/*.js",
     "!./node_modules/**/*.js",
     "!./gulpfile.js",
     "!./gulp/**/*.js",
