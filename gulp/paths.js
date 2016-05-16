@@ -35,6 +35,8 @@ export default wagner => {
                   ]);
 
   // Test Paths
+  wagner.constant("KARMA_CONF",
+                    __dirname + "/../karma.conf.js");
   wagner.constant("TESTS_PATH", "./test/*.js");
   wagner.constant("TESTS_SRC_JS", [
     "./**/*.js",

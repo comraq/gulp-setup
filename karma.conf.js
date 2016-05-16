@@ -1,23 +1,26 @@
 // Karma configuration
 // Generated on Sun May 15 2016 11:21:04 GMT-0400 (EDT)
 
+var JS_SRC = "./client/**/*.js",
+    JS_SERVER_SRC = "./server/**/*.js",
+    JS_TESTS_SRC = "./test/**/*.spec.js";
+
 module.exports = function(config) {
+  console.log("testing");
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
+    basePath: "",
 
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha', 'chai', 'sinon'],
+    frameworks: [ "mocha", "chai", "sinon", "browserify" ],
 
 
     // list of files / patterns to load in the browser
     files: [
-      'client/**/*.js',
-      'server/**/*.js',
-      'test/**/*.js'
+      "./test/ajax.spec.js"
     ],
 
 
@@ -29,14 +32,24 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      "./test/ajax.spec.js": [ "browserify" ]
     },
 
+    // Browserify Configuration
+    browserify: {
+      debug: true,
+      transform: [
+        [
+          "babelify",
+          { presets: [ "es2015", "react" ] }
+        ]
+      ]
+    },
 
     // test results reporter to use
-    // possible values: 'dots', 'progress'
+    // possible values: "dots", "progress"
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
-
+    reporters: [ "mocha" ],
 
     // web server port
     port: 9876,
@@ -57,7 +70,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome', 'Firefox'],
+    browsers: [ "Chrome" ],
 
 
     // Continuous Integration mode
