@@ -2,8 +2,8 @@
  * Takes in a request object and returns a promise.
  * Request Object comes in the following form:
  * {
- *   url: String,
  *   method: String,
+ *   url: String,
  *   user: String,
  *   password: String,
  *   header: Object,

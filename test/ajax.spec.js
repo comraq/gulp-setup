@@ -9,7 +9,7 @@ describe("utils: ", () => {
     it("should GET data", done => {
       ajax({
         method: "GET",
-        path: "/"
+        url: "/"
       }).then(res => {
         res = JSON.parse(res);
         res.data.should
@@ -32,7 +32,7 @@ describe("utils: ", () => {
     it("should POST data", done => {
       ajax({
         method: "POST",
-        path: "/",
+        url: "/",
         body: {
           postkey: "post value"
         }
