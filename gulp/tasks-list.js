@@ -31,6 +31,5 @@ export default (gulp, getTask, getTest, minifyJs, plugins) => {
   gulp.task("minify-server-js", getTask("minify-server-js"));
 
   // Test Tasks
-  gulp.task("tests", getTest("tests"));
-  gulp.task("sanity", getTest("sanity"));
+  gulp.task("test-ajax", getTest("ajax"));
 };

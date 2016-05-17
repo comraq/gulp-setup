@@ -1,5 +1,3 @@
-import httpStatus from "http-status";
-
 import ajax from "../client/app/utils/ajax";
 
 describe("utils: ", () => {
