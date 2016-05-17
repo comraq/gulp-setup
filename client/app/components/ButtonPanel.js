@@ -15,17 +15,12 @@ const buttonClasses = [
 class ButtonPanel extends React.Component {
   constructor(props) {
     super(props);
-
-    this.buttonClicked = this.buttonClicked.bind(this);
-  }
-
-  buttonClicked(key) {
-    return () => alert("You clicked button " + (key + 1));
   }
 
   render() {
     let buttonsList = this.props.values.split(" ").map((e, i) =>
-      <Mybutton value={ e } key={ i } callback={ this.buttonClicked(i) }
+      <Mybutton value={ e } key={ i }
+        callback={ () => this.props.toggleOverlay(i) }
         class={ buttonClasses[i % buttonClasses.length] } />
     );
 

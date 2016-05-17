@@ -5,7 +5,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import Mycomp from "./components/Mycomp";
+import Layout from "./Layout";
 
 // Rest of the app's scripts goes here
 const myVar = "Testing ES6 Features";
@@ -15,4 +15,4 @@ myFunc();
 const myStr = "a sample string";
 const app = document.getElementById("app");
 
-ReactDOM.render(<Mycomp data={ myStr } />, app);
+ReactDOM.render(<Layout data={ myStr } />, app);
