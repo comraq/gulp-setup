@@ -1,12 +1,7 @@
 // Karma configuration
 // Generated on Sun May 15 2016 11:21:04 GMT-0400 (EDT)
 
-var JS_SRC = "./client/**/*.js",
-    JS_SERVER_SRC = "./server/**/*.js",
-    JS_TESTS_SRC = "./test/**/*.spec.js";
-
 module.exports = function(config) {
-  console.log("testing");
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -30,7 +25,8 @@ module.exports = function(config) {
 
 
     // preprocess matching files before serving them to the browser
-    // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
+    // available preprocessors:
+    // https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
       "./test/ajax.spec.js": [ "browserify" ]
     },
@@ -60,16 +56,20 @@ module.exports = function(config) {
 
 
     // level of logging
-    // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+    // possible values: config.LOG_DISABLE
+    // || config.LOG_ERROR || config.LOG_WARN
+    // || config.LOG_INFO || config.LOG_DEBUG
     logLevel: config.LOG_INFO,
 
 
-    // enable / disable watching file and executing tests whenever any file changes
+    // enable / disable watching file and
+    // executing tests whenever any file changes
     autoWatch: true,
 
 
     // start these browsers
-    // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
+    // available browser launchers:
+    // https://npmjs.org/browse/keyword/karma-launcher
     browsers: [ "Chrome" ],
 
 
@@ -80,5 +80,5 @@ module.exports = function(config) {
     // Concurrency level
     // how many browser should be started simultaneous
     concurrency: Infinity
-  })
-}
+  });
+};
