@@ -3,6 +3,6 @@ module.exports = function(gulp, plugins,
   return function() {
     return gulp.src(SERV_JS_SRC_GLOB)
       .pipe(plugins.babel())
-      .pipe(gulp.dest(SERV_BASE_PATH))
+      .pipe(gulp.dest(SERV_BASE_PATH));
   };
 };

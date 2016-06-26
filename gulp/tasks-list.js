@@ -1,20 +1,20 @@
-export default (gulp, getTask, getTest, minifyJs, plugins) => {
+export default (gulp, getTask, getTest) => {
   // Top level compilation of sub-tasks
   gulp.task("build-all", [
-                           "minify-vendor-js",
-                           "minify-vendor-css",
-                           "minify-css",
-                           "minify-js",
-                           "minify-server-js"
-                         ]);
+    "minify-vendor-js",
+    "minify-vendor-css",
+    "minify-css",
+    "minify-js",
+    "minify-server-js"
+  ]);
   gulp.task("watch-all", [
-                           "minify-vendor-js",
-                           "minify-css",
-                           "watch-css",
-                           "watchify-js",
-                           "minify-server-js",
-                           "watch-server-js"
-                         ]);
+    "minify-vendor-js",
+    "minify-css",
+    "watch-css",
+    "watchify-js",
+    "minify-server-js",
+    "watch-server-js"
+  ]);
   gulp.task("watch-reload", [ "watch-all" ], getTask("watch-reload"));
 
   // Sub Tasks (Client)
